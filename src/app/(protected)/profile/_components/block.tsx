@@ -10,16 +10,15 @@ import {
 import { useCurrentUser } from "@/hooks/use-current-user";
 import { HiOutlineUser } from "react-icons/hi";
 
+const Block = ()=> {
 
-const user = useCurrentUser()
+	const user = useCurrentUser()
 
-const imgProfile = user?.image ? user?.image : (
+	const imgProfile = user?.image ? user?.image : (
 	<Button variant='shadow' className="rounded-full w-[4rem] h-[4rem] flex items-center justify-center text-[#4D6785] hover:bg-[#B069CA] hover:text-white" >
 		<HiOutlineUser className="text-3xl" />
 	</Button>);
 
-
-const Block = ()=> {
 	return(
 		<Card className="rounded-2xl shadow-md border-none">
 			<CardHeader>
