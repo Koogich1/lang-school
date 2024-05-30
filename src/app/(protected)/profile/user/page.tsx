@@ -13,6 +13,7 @@ import UploadFile from "../_components/uploadFile"
 
 const UserProfile = () => {
 	const user = useCurrentUser()
+	const teachEmail = user?.email ?? ''; //Почту учителя надо
 
 	const imgProfile = user?.image ? user?.image : (
 		<UploadFile />
@@ -105,7 +106,7 @@ const UserProfile = () => {
 								<Button 
 								className={`absolute top-0 left-0 w-full h-full bg-transparent hover:bg-transparent flex justify-end opacity-50 hover:opacity-100`}
 								onClick={async () => {
-									await navigator.clipboard.writeText(user?.email) // ВСТАВИТЬ ПОЧТУ УЧИТЕЛЯ
+									await navigator.clipboard.writeText(teachEmail) // ВСТАВИТЬ ПОЧТУ УЧИТЕЛЯ
 								}}
 								title="Копировать"
 								data-tooltip-text="Копировать"
