@@ -5,8 +5,6 @@ import { Navbar } from "@/app/(protected)/profile/_components/navbar/navbar"
 import { Button } from "@/components/ui/button"
 import { useCurrentUser } from "@/hooks/use-current-user"
 import Header from "../_components/header"
-import Dates from "../_components/dates"
-
 
 const SettingsPage = () => {
 
@@ -24,7 +22,6 @@ const SettingsPage = () => {
 				/>
 			</div>
 			<div className="w-full flex justify-start">
-				<Dates/>
 			</div>
 		</div>
 	)

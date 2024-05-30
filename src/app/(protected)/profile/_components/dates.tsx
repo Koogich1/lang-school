@@ -1,4 +1,4 @@
-"use client"
+/* "use client"
 
 import React from 'react';
 import { Calendar, ConfigProvider } from 'antd';
@@ -90,3 +90,5 @@ const Dates = () => {
 };
 
 export default Dates
+
+*/
