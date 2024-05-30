@@ -32,6 +32,10 @@ export const {
 				return true
 			}
 
+			if (!user.id) {
+				return false;
+			}
+
 			const existingUser = await getUserById(user.id);
 
 			if(!existingUser?.emailVerified) return false
@@ -68,7 +72,9 @@ export const {
 
 			if(session.user){
 				session.user.name = token.name
-				session.user.email = token.email
+			}
+			if (token.email) {
+        session.user.email = token.email;
 			}
 		
 			return session;

@@ -19,11 +19,20 @@ export const settings = async (
 		return {error: "Неавторизован"}
 	}
 
-	const dbUser = await getUserById(user.id)
-	
-	if(!dbUser){
-		return {error: "Не Авторизован"}
+	if (user === null || user === undefined) {
+		return { error: "Неавторизован" };
 	}
+	
+	if (!user.id) {
+		return { error: "ID пользователя отсутствует" };
+	}
+	
+	const dbUser = await getUserById(user.id);
+
+	if (dbUser === null) {
+		return { error: "Неавторизован" };
+	}
+	
 
 	if(values.email && values.email !== user.email){
 		const existingUser = await getUserByEmail(values.email)
