@@ -13,12 +13,13 @@ export const sendTwoFactorTokenEmail = async (
 		html: `<p>Ваш код: ${token}</p>`
 	})
 }
+	const domain = process.env.NEXT_PUBLIC_APP_URL
 
 export const sendPasswordResetEmail = async (
 	email: string,
 	token: string,
 ) => {
-	const resetLink = `http://localhost:3000/auth/new-password?token=${token}`
+	const resetLink = `${domain}/auth/new-password?token=${token}`
 	await resend.emails.send({
 		from: "onboarding@resend.dev",
 		to: email,
